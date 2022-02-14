@@ -78,13 +78,13 @@ def test_3():
     assert calculate(test_str,False) == 4.0
     
 def test_4():
-    """Check that floating point input works for an answer that returns scientific notation"""
+    """Check that floating point output works for an answer that returns scientific notation"""
     test_str = "mass of the moon in kg"
     assert get_wolfram_output_as_float(calculate(test_str,True)) == 7.3459e+22
     
     
 def test_5():
-    """ a test"""
+    """Check that the floating point output returns results that have a multiplier as string"""
     test_str = "millimeters in a meter"
     assert get_wolfram_output_as_float(calculate(test_str,True)) == 1.0e3
     
