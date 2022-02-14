@@ -89,12 +89,7 @@ def test_5():
     assert get_wolfram_output_as_float(calculate(test_str,True)) == 1.0e3
     
     
-def main(parser):
-    #get the parser object and get the input
-    parser_input = parser.parse_args()
-    input_str = parser_input.input_str
-    wolfram_switch = parser_input.wolfram_switch
-    float_switch = parser_input.float_switch
+def main(input_str, wolfram_switch = False, float_switch = False):
     #print the output from the calculate function using parsed inputs
     calculate_output = calculate(input_str, wolfram_switch)
     
@@ -114,4 +109,11 @@ if __name__ == '__main__':
     parser.add_argument('-f', action='store_true', default=False,
                     dest='float_switch',
                     help='tore wolframm result as float')
-    main(parser)
+    #get the parser object and get the input
+    parser_input = parser.parse_args()
+    input_str = parser_input.input_str
+    wolfram_switch = parser_input.wolfram_switch
+    float_switch = parser_input.float_switch
+    
+    #pass inputs to main
+    main(input_str, wolfram_switch, float_switch)
